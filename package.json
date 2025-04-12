@@ -1,5 +1,5 @@
 {
-"name": "YukiBot-MD",
+"name": "MonyxBot-MD",
 "version": "2.2.0",
 "description": "Super WhatsApp Bot Multi Device",
 "main": "index.js",
@@ -18,7 +18,7 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/The-King-Destroy/Yuki_Suou-Bot",
+"homepage": "https://github.com/WillZek/IsitaBot-MD",
 "author": {
 "name": "The-King-Destroy"
 },
