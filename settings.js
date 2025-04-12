@@ -45,7 +45,7 @@ global.botname = 'm᥆ᥒᥡ᥊-ᑲ᥆𝗍'
 global.wm = 'ৎ୭࠭͢𝐌𝐨𝐧𝐲𝐱-𝐁𝐨𝐭ⷭ𓆪͟͞ '
 global.author = 'Made By Isa🌸'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ isa 🌸'
-global.textbot = 'Yυƙι-Sυσυ-Bσƚ • Powered By ⁱᵃᵐ|𝔇ĕ𝐬†𝓻⊙γ𒆜'
+global.textbot = 'MσɳყxBσƚ • Powered By Isa 🌷'
 global.etiqueta = 'ⁱᵃᵐ|𝔇ĕ𝐬†𝓻⊙γ𒆜'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
