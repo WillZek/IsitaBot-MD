@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command, usedPrefix }) => {
+/* let handler = async (m, { conn, command, usedPrefix }) => {
 let img = './src/catalogo.jpg'
 let staff = `ᥫ᭡ *EQUIPO DE AYUDANTES* ❀
 ✰ *Dueño* ${creador}
@@ -43,3 +43,4 @@ handler.register = true
 handler.tags = ['main']
 
 export default handler
+*/
