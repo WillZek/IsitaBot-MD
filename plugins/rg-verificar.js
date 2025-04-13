@@ -49,7 +49,7 @@ await conn.sendMessage(m.chat, {
                 title: '✧ Usuario Verificado ✧',
                 body: textbot,
                 thumbnailUrl: pp,
-                sourceUrl: channel,
+                sourceUrl: instagram,
                 mediaType: 1,
                 showAdAttribution: true,
                 renderLargerThumbnail: true
