@@ -66,13 +66,9 @@ global.waitt = '❍ Espera un momento, soy lenta...';
 global.waittt = '❍ Espera un momento, soy lenta...';
 global.waitttt = '❍ Espera un momento, soy lenta...';
 
-var canal = 'https://whatsapp.com/channel/0029VapSIvR5EjxsD1B7hU3T'  
-var canal2 = 'https://whatsapp.com/channel/0029VavzewJLikg78gILRn1o'
-var canal3 = 'https://whatsapp.com/channel/0029VbAbv8w8fewoOMuXyn2F'
-var git = 'https://github.com/The-King-Destroy'
-var github = 'https://github.com/The-King-Destroy/Yuki_Suou-Bot' 
-let correo = 'thekingdestroy507@gmail.com'
-global.redes = [canal, canal2, canal3, git, github, correo].getRandom()
+var canal = 'https://www.instagram.com/@isitaa.x7' 
+let correo = 'ninopina10@gmail.com'
+global.redes = [canal, correo].getRandom()
 
 let category = "imagen"
 const db = './src/database/db.json'
