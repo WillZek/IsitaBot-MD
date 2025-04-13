@@ -1,4 +1,4 @@
-import PhoneNumber from 'awesome-phonenumber';
+/* import PhoneNumber from 'awesome-phonenumber';
 
 let handler = async (m, { conn }) => {
   m.react('👋');
@@ -57,3 +57,4 @@ END:VCARD`.trim();
     ...options
   });
 }
+*/
