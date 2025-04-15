@@ -12,7 +12,7 @@ let handler = async (m, { conn, args }) => {
 Hola! Soy  *${botname}*  ٩(˘◡˘)۶
 Aquí tienes la lista de comandos
 ╭┈ ↷
-│ᰔᩚ Cliente » @${tag}
+│ᰔᩚ Cliente » ${tag}
 │❀ Modo » Publico
 │✦ Bot » ${(conn.user.jid == global.conn.user.jid ? 'Principal 🅥' : 'Prem Bot 🅑')}
 │ⴵ Activada » ${uptime}
