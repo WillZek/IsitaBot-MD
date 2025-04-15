@@ -6,12 +6,13 @@ let handler = async (m, { conn, args }) => {
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.db.data.users).length
     let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
+    let tag = `@${m.sender.split('@')[0]}`;
     
     let txt = `
 Hola! Soy  *${botname}*  ٩(˘◡˘)۶
 Aquí tienes la lista de comandos
 ╭┈ ↷
-│ᰔᩚ Cliente » @${conn.getName(m.sender)}
+│ᰔᩚ Cliente » @${tag}
 │❀ Modo » Publico
 │✦ Bot » ${(conn.user.jid == global.conn.user.jid ? 'Principal 🅥' : 'Prem Bot 🅑')}
 │ⴵ Activada » ${uptime}
