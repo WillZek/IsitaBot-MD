@@ -592,7 +592,8 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
   }, { quoted: m })
 */
 
-let img = '';
+let img = 'https://cdnmega.vercel.app/media/hxZ0iKhA@uoeLT-mE5QHzhulguaGL8DI0Vg7Fl0sqnjD8mHnGxsk';
+
 await conn.sendMessage(m.chat, { image: { url: img }, caption: txt }, { quoted: m });
 }
 
