@@ -53,8 +53,8 @@ global.etiqueta = 'Isita🌷'
 global.moneda = 'MonyxCoins'
 global.welcom1 = '❍ Edita Con El Comando setwelcome'
 global.welcom2 = '❍ Edita Con El Comando setbye'
-global.banner = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1742678744381.jpeg'
-global.avatar = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1742678797993.jpeg'
+global.banner = 'https://cdnmega.vercel.app/media/p9QF2aYZ@dAWaqBkUBZpOsBz8gwSZRBpn1hGWY7jXBUZmsiCZ8hk'
+global.avatar = 'https://cdnmega.vercel.app/media/hxZ0iKhA@uoeLT-mE5QHzhulguaGL8DI0Vg7Fl0sqnjD8mHnGxsk'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
