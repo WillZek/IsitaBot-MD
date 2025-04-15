@@ -99,7 +99,27 @@ global.icono = [
 'https://cdnmega.vercel.app/media/pk5S2YzL@tle_YSCiVv08sLeEIcLe-HxXMSZN_irwUYmPi41p8XI',
 ].getRandom()
 
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: packname, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
+global.rcanal = {
+ contextInfo: {
+             isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: "https://www.instagram.com/star.moony_desing",
+      serverMessageId: 100,
+      newsletterName: 𝐈𝐬𝐢𝐭𝐚𝐁𝐨𝐭 - 𝐀𝐢,
+   }, 
+   externalAdReply: {
+    showAdAttribution: true, 
+    title: packname, 
+    body: textbot, 
+    mediaUrl: null, 
+    description: null, 
+    previewType: "PHOTO", 
+    thumbnailUrl: icono, 
+    sourceUrl: 'https://www.instagram.com/star.moony_desing', 
+    mediaType: 1, 
+    renderLargerThumbnail: false }, 
+    }, 
+    }
 
 export default handler
 
