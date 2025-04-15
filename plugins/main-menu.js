@@ -568,7 +568,7 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
 > ✦ Crea una sala de juego. 
   `.trim()
 
-  await conn.sendMessage(m.chat, { 
+/*  await conn.sendMessage(m.chat, { 
       text: txt,
       contextInfo: {
           mentionedJid: [m.sender, userId],
@@ -590,7 +590,10 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
           },
       },
   }, { quoted: m })
+*/
 
+let img = '';
+await conn.sendMessage(m.chat, { image: { url: img }, caption: txt }, { quoted: m });
 }
 
 handler.help = ['menu']
