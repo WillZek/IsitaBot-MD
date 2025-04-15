@@ -11,7 +11,7 @@ let handler = async (m, { conn, args }) => {
 Hola! Soy  *${botname}*  ٩(˘◡˘)۶
 Aquí tienes la lista de comandos
 ╭┈ ↷
-│ᰔᩚ Cliente » @${userId.split('@')[0]}
+│ᰔᩚ Cliente » @${conn.getName(m.sender)}
 │❀ Modo » Publico
 │✦ Bot » ${(conn.user.jid == global.conn.user.jid ? 'Principal 🅥' : 'Prem Bot 🅑')}
 │ⴵ Activada » ${uptime}
@@ -594,7 +594,7 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
 
 let img = 'https://cdnmega.vercel.app/media/p9QF2aYZ@dAWaqBkUBZpOsBz8gwSZRBpn1hGWY7jXBUZmsiCZ8hk';
 
-await conn.sendMessage(m.chat, { image: { url: img }, caption: txt }, { quoted: m });
+await conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender] }, { quoted: m });
 }
 
 handler.help = ['menu']
