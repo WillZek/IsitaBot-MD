@@ -54,16 +54,13 @@ global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5].getRandom()
 global.wait = '🕒 *𝗘𝘀𝗽𝗲𝗿𝗮 𝗨𝗻 𝗠𝗼𝗺𝗲𝗻𝘁𝗼, 𝗦𝗼𝘆 𝗟𝗲𝗻𝘁𝗼 ...*';
 
 //Enlaces
-var facebook = 'https://www.facebook.com/profile.php?id=61574203539793'  
-var github = 'https://github.com/WillZek/CrowBot-ST' 
-var web = 'https://crowbot-web.vercel.app/' 
-let instagram = 'https://www.instagram.com/crowbot_wa'
-
-global.redes = [facebook, github, web, instagram].getRandom()
+var canal = 'https://www.instagram.com/@isitaa.x7' 
+let correo = 'ninopina10@gmail.com'
+global.redes = [canal, correo].getRandom()
 
 //Imagen
 let category = "imagen"
-const db = './media/database/db.json'
+const db = './src/database/db.json'
 const db_ = JSON.parse(fs.readFileSync(db))
 const random = Math.floor(Math.random() * db_.links[category].length)
 const randomlink = db_.links[category][random]
