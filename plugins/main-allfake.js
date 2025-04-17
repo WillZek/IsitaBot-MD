@@ -123,7 +123,7 @@ global.rcanal = {
 
 export default handler
 
-function pickRandom(list) {
+async function pickRandom(list) {
 return list[Math.floor(Math.random() * list.length)]
   }
 
