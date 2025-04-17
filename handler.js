@@ -458,3 +458,75 @@ global.db.data.users[m.sender].spam = new Date * 1
                         stat.lastSuccess = m.error != null ? 0 : now
                 } else
                     stat = stats[m.plugin] = {
+                        total: 1,
+                        success: m.error != null ? 0 : 1,
+                        last: now,
+                        lastSuccess: m.error != null ? 0 : now
+                    }
+                stat.total += 1
+                stat.last = now
+                if (m.error == null) {
+                    stat.success += 1
+                    stat.lastSuccess = now
+                }
+            }
+        }
+
+        try {
+     if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
+} catch (e) { 
+      console.log(m, m.quoted, e)}
+       let settingsREAD = global.db.data.settings[this.user.jid] || {}  
+      if (opts['autoread']) await this.readMessages([m.key])
+      if (settingsREAD.autoread2) await this.readMessages([m.key])  
+
+     if (db.data.chats[m.chat].reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|Crow|a|s)/gi)) {
+         let emot = pickRandom(["🚩", "🍟", "✨️", "🌸", "💥", "⭐️", "🌟", "🍂", "🫂", "🍁", "💖", "💞", "💕", "💋"])
+       if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key }})
+       }
+     function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
+       }}
+
+export async function deleteUpdate(message) {
+try {
+const { fromMe, id, participant } = message
+if (fromMe) return 
+let msg = this.serializeM(this.loadMessage(id))
+let chat = global.db.data.chats[msg?.chat] || {}
+if (!chat?.delete) return 
+if (!msg) return 
+if (!msg?.isGroup) return 
+const antideleteMessage = `╭•┈•〘❌ 𝗔𝗡𝗧𝗜 𝗗𝗘𝗟𝗘𝗧𝗘 ❌〙•┈• ◊
+│❒ 𝗨𝗦𝗨𝗔𝗥𝗜𝗢:
+│• @${participant.split`@`[0]}
+│
+│❒ 𝗔𝗰𝗮𝗯𝗮 𝗱𝗲 𝗲𝗹𝗶𝗺𝗶𝗻𝗮𝗿 𝘂𝗻 𝗺𝗲𝗻𝘀𝗮𝗷𝗲
+│𝗿𝗲𝗲𝗻𝘃𝗶𝗮𝗻𝗱𝗼... ⏱️
+╰•┈•〘❌ 𝗔𝗡𝗧𝗜 𝗗𝗘𝗟𝗘𝗧𝗘 ❌〙•┈• ◊`.trim();
+await this.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg})
+this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
+} catch (e) {
+console.error(e)
+}}
+
+global.dfail = (type, m, conn) => {
+const msg = {
+rowner: '《★》Esta función solo puede ser usada por mi creador', 
+owner: '《★》Esta función solo puede ser usada por mi desarrollador.', 
+mods: '《★》Esta función solo puede ser usada por los moderadores del bot', 
+premium: '《★》Esta función solo es para usuarios Premium.', 
+group: '《★》Esta funcion solo puede ser ejecutada en grupos.', 
+private: '《★》Esta función solo puede ser usada en chat privado.', 
+admin: '《★》Este comando solo puede ser usado por admins.', 
+botAdmin: '《★》Para usar esta función debo ser admin.',
+unreg: `《★》No te encuentras registrado, registrese para usar esta función\n*/reg nombre.edad*\n\n*Ejemplo* : */reg Crow.18*`,
+restrict: '《★》Esta característica esta desactivada.'
+}[type];
+if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}
+
+let file = global.__filename(import.meta.url, true)
+watchFile(file, async () => {
+    unwatchFile(file)
+    console.log(chalk.magenta("Se actualizo 'handler.js'"))
+    if (global.reloadHandler) console.log(await global.reloadHandler())
+})
