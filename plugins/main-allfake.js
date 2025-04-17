@@ -94,7 +94,32 @@ global.canalIdM = ["120363368073378190@newsletter", "120363387375075395@newslett
 global.canalNombreM = ["✯ 𝐂𝐫𝐨𝐰𝐁𝐨𝐭 - 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✯", "⏤͟͟͞͞☆ 𝐂𝐫𝐨𝐰𝐁𝐨𝐭 𝐓𝐞𝐬𝐭 『𝐏𝐨𝐝𝐜𝐚𝐬𝐭』"]
 global.channelRD = await getRandomChannel()
 
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: textbot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icons, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
+
+/*
+global.rcanal = {
+ contextInfo: {
+             isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: "https://www.instagram.com/star.moony_desing",
+      serverMessageId: 100,
+      newsletterName: 𝐈𝐬𝐢𝐭𝐚𝐁𝐨𝐭 - 𝐀𝐢,
+   }, 
+   externalAdReply: {
+    showAdAttribution: true, 
+    title: packname, 
+    body: textbot, 
+    mediaUrl: null, 
+    description: null, 
+    previewType: "PHOTO", 
+    thumbnailUrl: icono, 
+    sourceUrl: 'https://www.instagram.com/star.moony_desing', 
+    mediaType: 1, 
+    renderLargerThumbnail: false }, 
+    }, 
+    }
+*/
+
+global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: 'https://www.instagram.com/star.moony_desing', serverMessageId: 100, newsletterName: 'https://www.instagram.com/star.moony_desing', }, externalAdReply: { showAdAttribution: true, title: textbot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icons, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
 
 export default handler
 
