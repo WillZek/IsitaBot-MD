@@ -1,4 +1,5 @@
 let handler = async (m, { conn, args }) => {
+try {
     let userId = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     let user = global.db.data.users[userId]
     let name = conn.getName(userId)
@@ -596,7 +597,10 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
 let img = 'https://raw.githubusercontent.com/WillZek/Storage-CB/main/images/7edd0057094e.jpg';
 
 await conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender] }, { quoted: m });
-}
+
+} catch (e) {
+m.reply(`${e.message}`);
+}}
 
 handler.help = ['menu']
 handler.tags = ['main']
