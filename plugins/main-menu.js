@@ -600,7 +600,8 @@ await conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m
 
 } catch (e) {
 m.reply(`${e.message}`);
-}}
+  }
+}
 
 handler.help = ['menu']
 handler.tags = ['main']
