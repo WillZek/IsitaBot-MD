@@ -570,30 +570,6 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
 > ✦ Crea una sala de juego. 
   `.trim()
 
-/*  await conn.sendMessage(m.chat, { 
-      text: txt,
-      contextInfo: {
-          mentionedJid: [m.sender, userId],
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-              newsletterJid: channelRD.id,
-              newsletterName: channelRD.name,
-              serverMessageId: -1,
-          },
-          forwardingScore: 999,
-          externalAdReply: {
-              title: botname,
-              body: textbot,
-              thumbnailUrl: banner,
-              sourceUrl: redes,
-              mediaType: 1,
-              showAdAttribution: true,
-              renderLargerThumbnail: true,
-          },
-      },
-  }, { quoted: m })
-*/
-
 let img = 'https://raw.githubusercontent.com/WillZek/Storage-CB/main/images/7edd0057094e.jpg';
 
 await conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender] }, { quoted: m });
