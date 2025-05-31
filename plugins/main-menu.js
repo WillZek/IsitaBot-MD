@@ -9,19 +9,17 @@ try {
     let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
     let tag = `@${m.sender.split('@')[0]}`;
     
-    let txt = `
+let txt = `
 Hola! Soy  *${botname}*  ٩(˘◡˘)۶
 Aquí tienes la lista de comandos
 ╭┈ ↷
-│ᰔᩚ Cliente » ${tag}
-│❀ Modo » Publico
-│✦ Bot » ${(conn.user.jid == global.conn.user.jid ? 'Principal 🅥' : 'Prem Bot 🅑')}
+│❀ Modo » Privado
 │ⴵ Activada » ${uptime}
 │✰ Usuarios » ${totalreg}
 │✧ Comandos » ${totalCommands}
 │🜸 Baileys » Multi Device
 ╰─────────────────
-Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
+Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*/*
 
 • :･ﾟ⊹˚• \`『 Info-Bot 』\` •˚⊹:･ﾟ•
 
@@ -572,7 +570,10 @@ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
 
 let img = 'https://raw.githubusercontent.com/WillZek/Storage-CB/main/images/7edd0057094e.jpg';
 
-await conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender] }, { quoted: m });
+// await conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender] }, { quoted: m });
+
+await conn.sendMessage(m.chat, { image: { url: img }, caption: txt }, { quoted: m });
+
 
 } catch (e) {
 m.reply(`${e.message}`);
