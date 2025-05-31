@@ -502,6 +502,8 @@ let shortname =   global.db.data.settings[conn.user.jid].shortname;
   }, { quoted: m })
 */
 
+let img = 'https://raw.githubusercontent.com/WillZek/Storage-CB/main/images/7edd0057094e.jpg'
+
 conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender, userId] }, { quoted: m });
 }
 
