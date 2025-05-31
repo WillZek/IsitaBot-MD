@@ -1,38 +1,76 @@
-const handler = async (m, { conn, text, command, usedPrefix }) => {
-// if (m.mentionedJid.includes(conn.user.jid)) return; // Evitar advertir al bot mismo
-const pp = './src/catalogo.jpg'
-let number, ownerNumber, aa, who;
-if (m.isGroup) { 
-who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text; 
-} else who = m.chat;
-  const user = global.db.data.users[who];
-  const usuario = conn.user.jid.split`@`[0] + '@s.whatsapp.net'
-  const bot = global.db.data.settings[conn.user.jid] || {};
+const handler = async (m, { conn, text, command, usedPrefix, participants }) => {
+  const normalizeJid = jid => jid?.replace(/[^0-9]/g, '');
+  const cleanJid = jid => jid?.split(':')[0] || '';
+  const senderNum = normalizeJid(m.sender);
+  const botNums = [conn.user.jid, conn.user.lid].map(j => normalizeJid(cleanJid(j)));
+
+  const userData = m.isGroup 
+    ? participants.find(u => normalizeJid(u.id) === senderNum) 
+    : {};
+  const botData = m.isGroup 
+    ? participants.find(u => botNums.includes(normalizeJid(u.id))) 
+    : {};
+
+  const isRAdmin = userData?.admin === 'superadmin';
+  const isAdmin = isRAdmin || userData?.admin === 'admin';
+  const isBotAdmin = !!botData?.admin;
+
+  const pp = './src/catalogo.jpg';
   const dReason = 'Sin motivo';
-  const msgtext = text || dReason 
+  const msgtext = text || dReason;
   const sdms = msgtext.replace(/@\d+-?\d* /g, '');
-  const warntext = `${emoji} Etiquete a una persona o responda a un mensaje del grupo para advertir al usuario.`;
-  if (!who) {
-return m.reply(warntext, m.chat, { mentions: conn.parseMention(warntext) });
+  const warntext = '🌺 Etiquete a una persona o responda a un mensaje del grupo para advertir al usuario.';
+
+  let who;
+  if (m.isGroup) {
+    who = m.mentionedJid[0] 
+      ? m.mentionedJid[0] 
+      : m.quoted 
+        ? m.quoted.sender 
+        : text;
+  } else {
+    who = m.chat;
   }
 
-for (let i = 0; i < global.owner.length; i++) {
-ownerNumber = global.owner[i][0];
-if (usuario.replace(/@s\.whatsapp\.net$/, '') === ownerNumber) {
-aa = ownerNumber + '@s.whatsapp.net'
-await conn.reply(m.chat, `…`, m, { mentions: [aa] })
-return
-}}
+  if (!who) {
+    return m.reply(warntext, m.chat, { mentions: conn.parseMention(warntext) });
+  }
+
+  const normalizedWho = normalizeJid(who);
+  const isTargetBot = botNums.includes(normalizedWho);
+  const isTargetOwner = global.owner.some(([num]) => num === normalizedWho);
+
+  if (isTargetBot || isTargetOwner) {
+    return m.reply('⚠️ No puedes advertir al bot ni a los dueños.');
+  }
+
+  const user = global.db.data.users[who];
+  if (!user) {
+    return m.reply('⚠️ Usuario no encontrado en la base de datos.');
+  }
 
   user.warn += 1;
-  await m.reply(`${user.warn == 1 ? `*@${who.split`@`[0]}*` : `*@${who.split`@`[0]}*`} Recibio una advertencia en este grupo!.\nMotivo: ${sdms}\n*Advertencias: ${user.warn}/3*`, null, { mentions: [who] },
+
+  await m.reply(
+    `⚠️ *Advertencia emitida*\n` +
+    `👤 Usuario: *@${who.split`@`[0]}*\n` +
+    `📝 Motivo: ${sdms}\n` +
+    `📌 Advertencias: ${user.warn}/3`,
+    null,
+    { mentions: [who] }
   );
+
   if (user.warn >= 3) {
     user.warn = 0;
-    await m.reply(`${emoji} Te lo adverti varias veces!!!.\n*@${who.split`@`[0]}* Superaste las *3* advertencias, ahora seras eliminado/a.`, null, { mentions: [who] },
+    await m.reply(
+      `❌ *Expulsión ejecutada*\n` +
+      `*@${who.split`@`[0]}* recibió 3 advertencias y será eliminado.`,
+      null,
+      { mentions: [who] }
     );
     await conn.groupParticipantsUpdate(m.chat, [who], 'remove');
   }
+
   return !1;
 };
 
