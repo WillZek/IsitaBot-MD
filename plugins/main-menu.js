@@ -754,8 +754,8 @@ let img = 'https://raw.githubusercontent.com/WillZek/Storage-CB/main/images/7edd
           mentionedJid: [m.sender],
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-              newsletterJid: channelRD.id,
-              newsletterName: channelRD.name,
+              newsletterJid: 'https://www.instagram.com/star.moony_desing',
+              newsletterName: 'https://www.instagram.com/star.moony_desing',
               serverMessageId: -1,
           },
           forwardingScore: 999,
