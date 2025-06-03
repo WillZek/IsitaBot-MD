@@ -1,14 +1,5 @@
 let handler = async (m, { conn, args }) => {
-    let userId = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-    let user = global.db.data.users[userId]
-    let name = conn.getName(userId)
-    let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
-    let totalreg = Object.keys(global.db.data.users).length
-    let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
-
-    let txt = `𝐇𝐨𝐥𝐚 @${userId.split('@')[0]}! 𝐒𝐨𝐲 ${botname}
-ᴀǫᴜɪ ᴛɪᴇɴᴇs ʟᴀ ʟɪsᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏs
+    let txt = `𝐇𝐨𝐥𝐚 𝐒𝐨𝐲 IsitaBot ᴀǫᴜɪ ᴛɪᴇɴᴇs ʟᴀ ʟɪsᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏs
 ╭┈ ↷
 │ ✐ ${author}
 │ ✐ ꒷ꕤ🌤️ദ ᴄᴏᴍᴀɴᴅᴏs ★
@@ -475,8 +466,8 @@ ${med} #logoportadapubg
 ${med} #logoportadacounter
 `.trim()
 
-let img = 'https://raw.githubusercontent.com/WillZek/CrowBot-ST/main/media/menus/Menu.jpg';
-let shortname =   global.db.data.settings[conn.user.jid].shortname;
+// let img = 'https://raw.githubusercontent.com/WillZek/CrowBot-ST/main/media/menus/Menu.jpg';
+// let shortname =   global.db.data.settings[conn.user.jid].shortname;
 
 /*  await conn.sendMessage(m.chat, { 
       text: txt,
@@ -504,7 +495,9 @@ let shortname =   global.db.data.settings[conn.user.jid].shortname;
 
 let img = 'https://raw.githubusercontent.com/WillZek/Storage-CB/main/images/7edd0057094e.jpg'
 
-conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender, userId] }, { quoted: m });
+// conn.sendMessage(m.chat, { image: { url: img }, caption: txt, mentions: [m.sender, userId] }, { quoted: m });
+
+conn.sendMessage(m.chat, { image: { url: img }, caption: txt }, { quoted: m });
 }
 
 handler.help = ['menu']
