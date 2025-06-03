@@ -1,7 +1,7 @@
 {
 "name": "MonyxBot-MD",
 "version": "2.2.0",
-"description": "Super WhatsApp Bot Multi Device",
+"description": "WhatsApp Bot Multi Device",
 "main": "index.js",
 "type": "module",
 "directories": {
@@ -20,7 +20,7 @@
 },
 "homepage": "https://github.com/WillZek/IsitaBot-MD",
 "author": {
-"name": "The-King-Destroy"
+"name": "WillZek"
 },
 "repository": {
 "type": "git",
@@ -29,9 +29,9 @@
 "bugs": {
 "url": "https://github.com/WillZek/IsitaBot-MD/issues"
 },
-"license": "GPL-3.0-or-later",
+"license": "MIT-License",
 "dependencies": {
-"@whiskeysockets/baileys": "^6.7.18",
+"@whiskeysockets/baileys": "github:nstar-y/bail",
 "@adiwajshing/keyed-db": "^0.2.4",
 "@bochilteam/scraper": "^4.2.4",
 "@bochilteam/scraper-sosmed": "^1.0.5",
