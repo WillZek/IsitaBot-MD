@@ -91,7 +91,7 @@ user.warn = 0
                 global.db.data.chats[m.chat] = {}
             if (chat) {
                 if (!('isBanned' in chat))
-                    chat.isBanned = false
+                    chat.isBanned = true
                 if (!('welcome' in chat))
                     chat.welcome = true
                 if (!('audios' in chat))
@@ -126,7 +126,7 @@ chat.autoresponder = false
                     chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
-                    isBanned: false,
+                    isBanned: true,
                     welcome: true,
                     delete: false,
                     audios: false,
