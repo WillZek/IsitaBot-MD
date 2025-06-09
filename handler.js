@@ -331,7 +331,7 @@ global.db.data.users[m.sender].spam = new Date * 1
                     let chat = global.db.data.chats[m.chat]
                     let user = global.db.data.users[m.sender]
                     let setting = global.db.data.settings[this.user.jid]
-                    if (name != 'owner-unbanchat.js' && chat?.isBanned)
+                    if (name != 'grupo-unbanchat.js' && chat?.isBanned)
                         return 
                     if (name != 'owner-unbanuser.js' && user?.banned)
                         return
